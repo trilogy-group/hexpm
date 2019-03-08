@@ -70,6 +70,8 @@ mix test
 iex -S mix phx.server
 ```
 
+Open a link for exposed port 4000 in devspaces details.
+
 ## Running Hexpm via Docker-Compose file
 
 Currently, we have these command available to work using local docker compose.
