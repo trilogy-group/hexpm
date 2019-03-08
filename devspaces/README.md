@@ -31,7 +31,7 @@ devspaces create
 
 2. Start your devspaces.
 ```bash
-devspaces start hexpm
+devspaces start hexpm-dev
 ```
 
 3. Start containers synchronization
@@ -39,12 +39,12 @@ Open terminal on folder you want to sync with devspaces and run:
 
 ```bash
 cd ..
-devspaces bind hexpm
+devspaces bind hexpm-dev
 ```
 4. Grab some container info
 
 ```bash
-devspaces info hexpm
+devspaces info hexpm-dev
 ```
 
 Retrieve published DNS, endpoints using this command and 
@@ -52,7 +52,7 @@ Retrieve published DNS, endpoints using this command and
 5. Connect to development container
 
 ```bash
-devspaces exec hexpm
+devspaces exec hexpm-dev
 ```
 
 6. Download dependencies

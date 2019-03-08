@@ -1,5 +1,5 @@
 --- # devspaces.yml
-name: hexpm
+name: hexpm-dev
 description:  Development environment for Hexpm
 
 # If you want to use a different Dockerfile for your DevSpace, provide the path
