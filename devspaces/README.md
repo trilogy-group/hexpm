@@ -61,17 +61,31 @@ devspaces exec hexpm-dev
 /etc/init.d/postgresql start
 ```
 
-7. Download dependencies
+7. Wait untill source code will be synced, then install Node dependencies for frontend part.
+
 ```bash
+cd assets
+npm install
+```
+
+8. Download dependencies
+```bash
+cd ..
 yes | mix setup 
 ```
 
-8. Run tests
+9. Run database migration
+
+```bash
+mix ecto.migrate
+```
+
+10. Run tests
 ```bash
 mix test
 ```
 
-9. Run server
+11. Run server
 ```bash
 iex -S mix phx.server
 ```

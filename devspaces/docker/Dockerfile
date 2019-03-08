@@ -24,7 +24,14 @@ RUN apt-get update && \
 ENV LANG=C.UTF-8
 
 USER postgres
-RUN service postgresql start && psql -c "ALTER USER postgres PASSWORD 'postgres';"
+RUN service postgresql start && \
+    psql -c "ALTER USER postgres PASSWORD 'postgres';" && \
+    psql -c "CREATE DATABASE hexpm_dev;" && \
+    psql -c "GRANT ALL PRIVILEGES ON DATABASE hexpm_dev TO postgres;" && \
+    psql -c "ALTER USER postgres WITH SUPERUSER;" && \
+    psql -c "CREATE DATABASE hexpm_test" && \
+    psql -c "GRANT ALL PRIVILEGES ON DATABASE hexpm_test TO postgres;"
+
 USER root
 
 WORKDIR /data
