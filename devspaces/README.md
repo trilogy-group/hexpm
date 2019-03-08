@@ -47,7 +47,7 @@ devspaces bind hexpm-dev
 devspaces info hexpm-dev
 ```
 
-Retrieve published DNS, endpoints using this command and 
+Retrieve published DNS, endpoints using this command.
 
 5. Connect to development container
 
@@ -55,17 +55,23 @@ Retrieve published DNS, endpoints using this command and
 devspaces exec hexpm-dev
 ```
 
-6. Download dependencies
+6. Start database
+
+```bash
+/etc/init.d/postgresql start
+```
+
+7. Download dependencies
 ```bash
 yes | mix setup 
 ```
 
-7. Run tests
+8. Run tests
 ```bash
 mix test
 ```
 
-8. Run server
+9. Run server
 ```bash
 iex -S mix phx.server
 ```
