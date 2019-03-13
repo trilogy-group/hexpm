@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - data-volume:/var/lib/db
+    ports:
+     - "5432"    
+    network_mode: host
+  hexpm:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: hexpm    
+    volumes:
+      - ../..:/data:Z
+    tty: true
+    expose:
+      - "4000"
+    network_mode: host
+
+volumes:
+  data-volume:
